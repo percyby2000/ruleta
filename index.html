@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Ingeniería de Sistemas Septimo CICLO - Experiencia Interactiva</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Ingeniería de Sistemas Septimo Ciclo
+                <BR><img
+                    src="https://static.wixstatic.com/media/bb5ba9_8632b596e20a44d3ae1d905a86476aa6~mv2.png/v1/crop/x_0,y_0,w_1770,h_822/fill/w_177,h_82,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20ELP%20OFICIAL.png"
+                    alt="">
+            </h1>
+            <p>Aprende, Explora y Diviértete</p>
+        </div>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="/1.jpeg" alt="Estudiantes programando">
+            </div>
+            <div class="carousel-item">
+                <img src="/2.jpeg" alt="Laboratorio de computación">
+            </div>
+            <div class="carousel-item">
+                <img src="/2.jpeg" alt="Presentación de proyectos">
+            </div>
+            <div class="carousel-item">
+                <img src="/3.jpeg" alt="Trabajo en equipo">
+            </div>
+        </div>
+        <button class="carousel-control carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control carousel-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="activities">
+        <h2>Ruleta del Conocimiento</h2>
+        <input type="text" class="name-input" placeholder="Ingresa tu nombre para participar">
+        <div class="wheel-container">
+            <div class="wheel"></div>
+        </div>
+        <button class="spin-button">¡Girar Ruleta!</button>
+    </div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Pregunta para <span class="player-name"></span></h2>
+            <p class="question"></p>
+            <input type="text" class="answer-input" placeholder="Escribe tu respuesta aquí">
+            <button class="submit-answer">Enviar Respuesta</button>
+        </div>
+    </div>
+
+    <div class="audio-control" id="audioControl">
+        <i class="fas fa-volume-mute"></i>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="https://github.com/percyby2000" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> Visita mi GitHub
+            </a>
+        </div>
+    </footer>
+
+    <audio id="background-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

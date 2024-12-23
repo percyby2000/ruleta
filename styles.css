@@ -1,0 +1,446 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+    --accent-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+    color: var(--light-color);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(74, 144, 226, 0.2) 0%, rgba(243, 156, 18, 0.2) 100%);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Carousel Styles */
+.carousel {
+    width: 90%;
+    max-width: 1000px;
+    margin: 3rem auto;
+    position: relative;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+/* Activities Section */
+.activities {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 3rem 0;
+    margin: 3rem auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 90%;
+}
+
+.activities h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wheel-container {
+    margin: 2rem auto;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    max-width: 90%;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    transform: rotate(0deg);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 10px solid rgba(255, 255, 255, 0.1);
+}
+
+.wheel-section {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.wheel-section:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.name-input {
+    display: block;
+    width: 300px;
+    max-width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.name-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.spin-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.spin-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+.spin-button:active {
+    transform: translateY(1px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.modal h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.modal p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.answer-input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.submit-answer {
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-answer:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Audio Control */
+.audio-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.audio-control:hover {
+    transform: scale(1.1);
+    background: var(--accent-color);
+}
+
+.audio-control i {
+    font-size: 24px;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .wheel-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .modal-content {
+        padding: 2rem;
+    }
+}
+
+/* Estilo para el footer */
+.footer {
+
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.github-link i {
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.github-link:hover {
+    color: #000000;
+    /* Color al pasar el mouse */
+}
+
+.github-link i:hover {
+    color: #7c0067;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 10px 15px;
+    }
+
+    .github-link {
+        font-size: 20px;
+    }
+
+    .github-link i {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 10px 10px;
+    }
+
+    .github-link {
+        font-size: 20px;
+    }
+
+    .github-link i {
+        font-size: 28px;
+    }
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
